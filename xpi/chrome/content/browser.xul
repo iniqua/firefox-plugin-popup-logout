@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://popupLogout2058/skin/skin.css" type="text/css"?> 
+<!DOCTYPE popupLogout2058 SYSTEM "chrome://popupLogout2058/locale/translations.dtd">
+<overlay id="popuplogout2058" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		<script src="sites.js" />
+		<script src="popupLogout2058.js" />
+		<!--
+		<menupopup id="menu_ToolsPopup"> 
+			<menuitem label="&runpopupLogout2058;" key="popup-logout-run-key" oncommand="freeSignOut.run()"/> 
+		</menupopup>
+		
+		<keyset>
+			<key id="popup-logout-run-key" modifiers="accel alt shift" key="L" oncommand="freeSignOut.run()"/>
+		</keyset>
+
+		<statusbar id="status-bar">
+			<statusbarpanel id="popup-logout-status-bar-icon" class="statusbarpanel-iconic" src="chrome://popupLogout2058/skin/status-bar.png" tooltiptext="&runpopupLogout2058;" onclick="freeSignOut.run()" />
+		</statusbar>
+		<toolbarpalette id="BrowserToolbarPalette">
+			<toolbarbutton id="popup-logout-toolbar-button" label="Link Target Finder" tooltiptext="&runpopupLogout2058;" oncommand="freeSignOut.run()"/>
+		</toolbarpalette>
+-->
+</overlay>

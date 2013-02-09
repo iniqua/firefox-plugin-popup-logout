@@ -1,0 +1,8 @@
+content     popupLogout2058    chrome/content/
+content     popupLogout2058    chrome/content/ contentaccessible=yes
+overlay chrome://browser/content/browser.xul chrome://popupLogout2058/content/browser.xul
+
+locale	popupLogout2058	en-US	locale/en-US/
+
+skin	popupLogout2058	classic/1.0	skin/
+style	chrome://global/content/customizeToolbar.xul	chrome://popupLogout2058/skin/skin.css
