@@ -6,7 +6,7 @@ var sites = new Array(
 		},
 		banda: function(doc) {
 			if (doc.getElementById('reg_form_box')) return '';
-			else return '<img style="position: fixed; top: 38px; right: 0; border: 0;" src="http://www.iniqua.com/popup/LogOut_right_green_007200.png" alt="Logout Push up">';
+			else return '<img style="position: fixed; top: 38px; right: 0; border: 0;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
 			return 'javascript: document.forms["logout_form"].submit()';
@@ -20,7 +20,7 @@ var sites = new Array(
 		},
 		banda: function(doc) {
 			if (doc.getElementById('signup-user-name')) return '';
-			else return '<img style="position: fixed; top: 40px; right: 0; border: 0;" src="http://www.iniqua.com/popup/LogOut_right_green_007200.png" alt="Logout Push up">';
+			else return '<img style="position: fixed; top: 40px; right: 0; border: 0;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
 			return 'javascript: document.forms["signout-form"].submit()';
@@ -33,7 +33,7 @@ var sites = new Array(
 		},
 		banda: function(doc) {
 			if (doc.getElementById('login_canvas')) return '';
-			else return '<img style="position: fixed; top: 39px; right: 0; border: 0; z-index: 999999;" src="http://www.iniqua.com/popup/LogOut_right_green_007200.png" alt="Logout Push up">';
+			else return '<img style="position: fixed; top: 39px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
 			return "javascript:waitForMe=setTimeout(function(){document.location='?m=login'},4000);document.getElementById('more_options_button_header').click();document.getElementById('tab_logout').click();";
@@ -46,7 +46,7 @@ var sites = new Array(
 		},
 		banda: function(doc) {
 			if (doc.getElementById('gaia_loginform')) return '';
-			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="http://www.iniqua.com/popup/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
 			return "javascript:document.getElementById('gb_71').click();";
@@ -72,7 +72,7 @@ var sites = new Array(
 		},
 		banda: function(doc) {
 			if (!doc.getElementById('nav-utility-auth')) return '';
-			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="http://www.iniqua.com/popup/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
 			return "javascript:document.getElementById('nav-utility-auth').childNodes[0].click();";
@@ -85,7 +85,7 @@ var sites = new Array(
 		},
 		banda: function(doc) {
 			if (doc.getElementById('password')) return '';
-			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="http://www.iniqua.com/popup/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
 			return "http://about.me/logout_handler";
