@@ -45,7 +45,7 @@ var sites = new Array(
 			return url.match('mail.google.com/*');
 		},
 		banda: function(doc) {
-			if (doc.getElementById('gaia_loginform')) return '';
+			if (doc.getElementById('gaia_loginform') || (doc.getElementById('sopu'))) return '';
 			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
