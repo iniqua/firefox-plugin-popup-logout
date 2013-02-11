@@ -27,10 +27,12 @@ Change Log
 
 	- Fixed mozilla reviewed issues
 
-		- Manage DOM nodes creates dinamically. https://developer.mozilla.org/en/XUL_School/DOM_Building_and_HTML_Insertion.
-
 		- Move remote images to be loaded from add-on.
 
 		- doc.location.host
 
+	- To do
+
 		- Wrap variables and functions within a JavasScript Object. https://developer.mozilla.org/en/XUL_School/JavaScript_Object_Management
+
+		- Manage DOM nodes creates dinamically. https://developer.mozilla.org/en/XUL_School/DOM_Building_and_HTML_Insertion.
