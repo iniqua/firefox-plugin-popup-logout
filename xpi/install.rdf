@@ -11,7 +11,7 @@
 		<em:description>PopUp LogOut unhides the logout button and helps you to close your session when you've finished using a web. So you can prevent possible theft or misuses of your identity.</em:description>
 		<em:homepageURL>http://popuplogout.iniqua.com</em:homepageURL>
 		<em:developer>Fran J. Gomez :: @ffranz</em:developer>
-		<em:developer>dvisiedo :: dvisiedo@iniqua.com</em:developer>
+		<em:developer>David Visiedo :: dvisiedo@iniqua.com</em:developer>
 		<em:iconURL>chrome://popupLogout2058/skin/icon.png</em:iconURL>
 		<em:icon64URL>chrome://popupLogout2058/skin/icon64.png</em:icon64URL>
 		<em:optionsURL>chrome://popupLogout2058/content/options.xul</em:optionsURL>
