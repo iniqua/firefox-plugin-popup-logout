@@ -21,7 +21,7 @@ Change Log
 
 	- Initial version
 
-	- Sites includes: facebook.com, twitter.com, tuenti.com, mail.google.com, mail.live.com, linkedin.com, about.me
+	- Sites include: facebook.com, twitter.com, tuenti.com, mail.google.com, mail.live.com, linkedin.com, about.me
 
 0.1.1
 
