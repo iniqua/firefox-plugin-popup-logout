@@ -27,7 +27,7 @@ var freeSignOut = function (sitesarg) {
 
 			banner = '';
 			for (var i=0;i<sites.length;i++) {
-				if (sites[i].check(doc.URL)) {
+				if (sites[i].check(doc.location.host)) {
 					banner = sites[i].banner(doc);
 					banda = sites[i].banda(doc);
 					break;
