@@ -35,7 +35,7 @@ var freeSignOut = function (sitesarg) {
 			}
 			if (banner == '')
 			{
-				banda='<img style="position: fixed; bottom: 0; right: 0; border: 0; z-index: 999999;" src="http://www.iniqua.com/popup/LogOut_right_bottom_green_007200-free.png" alt="Logout Push up">';
+				banda='<img style="position: fixed; bottom: 0; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 				banner = 'mailto:ffranz@iniqua.com?subject=Free sign out at '+doc.domain+'&body=Your message here'
 			}else{
 				bodyList = doc.getElementsByTagName('body');
