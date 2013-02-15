@@ -1,4 +1,8 @@
-var sites = new Array(
+if ("undefined" == typeof(FreeSignOut)) {
+	var FreeSignOut = {};
+};
+
+FreeSignOut.sites = new Array(
 	{	// start entry for facebook.com
 		id: "facebook.com",
 		check: function(url) {
