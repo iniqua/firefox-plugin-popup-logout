@@ -36,3 +36,10 @@ Change Log
 		- Wrap variables and functions within a JavasScript Object. https://developer.mozilla.org/en/XUL_School/JavaScript_Object_Management
 
 		- Manage DOM nodes creates dinamically. https://developer.mozilla.org/en/XUL_School/DOM_Building_and_HTML_Insertion.
+
+0.1.2
+
+	- Declares a namespace for the plugin.
+
+	- Declares the element name inserted for the button as a variable.
+
