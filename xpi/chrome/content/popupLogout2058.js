@@ -6,7 +6,7 @@ if ("undefined" == typeof(FreeSignOut)) {
 
 FreeSignOut.Logout = {
 
-	element_id: "sopu",
+	element_id: "popup_logout_element",
 
 	image_right: "chrome://popupLogout2058/skin/LogOut_right_green_007200.png",
 
@@ -22,14 +22,14 @@ FreeSignOut.Logout = {
 
 		FreeSignOut.Logout.prefManager = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
 
-		window.addEventListener("load", FreeSignOut.Logout.onPageLoad, false);
+		window.addEventListener("load", FreeSignOut.Logout.onBrowserLoad, false);
 	},
 
 	preferenceId: function (subid) {
 		return FreeSignOut.Logout.preferencesRoot + subid;
 	},
 
-	onPageLoad : function () {
+	onBrowserLoad : function () {
 
 		gBrowser.addEventListener("load", function () {
 			var autoRun = FreeSignOut.Logout.prefManager.getBoolPref(FreeSignOut.Logout.preferenceId("autorun"));
@@ -50,7 +50,7 @@ FreeSignOut.Logout = {
 		return value;
 	},
 		
-	run : function () {
+	run: function () {
 
 		doc = content.document;
 
@@ -89,7 +89,6 @@ FreeSignOut.Logout = {
 		alert('sites updated');
 	}
 };
-
 
 FreeSignOut.Logout.init();
 

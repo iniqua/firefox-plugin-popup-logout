@@ -9,7 +9,7 @@ FreeSignOut.sites = new Array(
 			return url.match('facebook.com/*');
 		},
 		banda: function(doc) {
-			if (doc.getElementById('reg_form_box') || (doc.getElementById('sopu'))) return '';
+			if (doc.getElementById('reg_form_box') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
 			else return '<img style="position: fixed; top: 38px; right: 0; border: 0;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
@@ -23,7 +23,7 @@ FreeSignOut.sites = new Array(
 			return url.match('twitter.com/*');
 		},
 		banda: function(doc) {
-			if (doc.getElementById('signup-user-name') || (doc.getElementById('sopu'))) return '';
+			if (doc.getElementById('signup-user-name') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
 			else return '<img style="position: fixed; top: 40px; right: 0; border: 0;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
@@ -36,7 +36,7 @@ FreeSignOut.sites = new Array(
 			return url.match('tuenti.com/*');
 		},
 		banda: function(doc) {
-			if (doc.getElementById('login_canvas') || (doc.getElementById('sopu'))) return '';
+			if (doc.getElementById('login_canvas') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
 			else return '<img style="position: fixed; top: 39px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
@@ -49,7 +49,7 @@ FreeSignOut.sites = new Array(
 			return url.match('mail.google.com/*');
 		},
 		banda: function(doc) {
-			if (doc.getElementById('gaia_loginform') || (doc.getElementById('sopu'))) return '';
+			if (doc.getElementById('gaia_loginform') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
 			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
@@ -75,7 +75,7 @@ FreeSignOut.sites = new Array(
 			return url.match('linkedin.com/*');
 		},
 		banda: function(doc) {
-			if (!doc.getElementById('nav-utility-auth') || (doc.getElementById('sopu'))) return '';
+			if (!doc.getElementById('nav-utility-auth') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
 			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
@@ -88,7 +88,7 @@ FreeSignOut.sites = new Array(
 			return url.match('about.me/*');
 		},
 		banda: function(doc) {
-			if (doc.getElementById('password') || (doc.getElementById('sopu'))) return '';
+			if (doc.getElementById('password') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
 			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
@@ -101,7 +101,7 @@ FreeSignOut.sites = new Array(
                         return url.match('spotify.com/*');
                 },
                 banda: function(doc) {
-                        if (!doc.getElementById('js-display-name') || (doc.getElementById('sopu'))) return '';
+                        if (!doc.getElementById('js-display-name') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
                         else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
                 },
                 banner: function(doc) {
