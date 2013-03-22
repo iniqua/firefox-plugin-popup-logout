@@ -57,16 +57,17 @@ FreeSignOut.sites = new Array(
 		}
 	},
 	{	// start entry for mail.live.com
-		id: 'mail.live.com',
+		id: 'live.com',
 		check: function(url) {
-			return url.match('mail.live.com/*');
+			return url.match('live.com/*');
 		},
 		banda: function(doc) {
-			return '';
+			return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
-			doc.getElementById('c_signout').style.cssText = 'font-size:15px; background:darkblue;';
-			return 'null';
+			if (doc.getElementById('c_signout')!=null) {
+				return 'javascript:document.location="https://login.live.com/logout.srf";';
+			} else return '';
 		}
 	},
 	{	// start entry for linkedin.com
