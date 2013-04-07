@@ -30,7 +30,7 @@ $    make xpi
     - Move remote images to be loaded from add-on.
     - doc.location.host
 
-**0.1.2** [13.04.2013]
+**0.1.2** [06.04.2013]
 
 *   New sites added: meneame.net, yahoo.com
 
