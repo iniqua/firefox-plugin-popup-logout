@@ -23,7 +23,7 @@ FreeSignOut.sites = new Array(
 			return url.match('twitter.com/*');
 		},
 		banda: function(doc) {
-			if (doc.getElementById('signup-user-name') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+			if (!doc.getElementById('global-nav-home') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
 			else return '<img style="position: fixed; top: 40px; right: 0; border: 0;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
