@@ -62,7 +62,8 @@ FreeSignOut.sites = new Array(
 			return url.match('live.com/*');
 		},
 		banda: function(doc) {
-			return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+			if (!doc.getElementById('c_me') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
 			if (doc.getElementById('c_signout')!=null) {

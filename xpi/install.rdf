@@ -5,7 +5,7 @@
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>popuplogout@iniqua.com</em:id>
 		<em:name>PopUp LogOut</em:name>
-		<em:version>0.1.1</em:version>
+		<em:version>0.1.2</em:version>
 		<em:type>2</em:type>
 		<em:creator>Iniqua Labs</em:creator>
 		<em:description>PopUp LogOut unhides the logout button and helps you to close your session when you've finished using a web. So you can prevent possible theft or misuses of your identity.</em:description>
