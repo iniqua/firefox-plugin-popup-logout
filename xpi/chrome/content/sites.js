@@ -147,5 +147,18 @@ FreeSignOut.sites = new Array(
 		banner: function(doc) {
 			return "https://login.yahoo.com/config/login?.src=fpctx&logout=1&.direct=1&.done=http://yahoo.com/";
 		}
+	},
+	{	// start entry for slideshare.net
+		id: 'slideshare.net',
+		check: function(url) {
+			return url.match('slideshare.net/*');
+		},
+		banda: function(doc) {
+			if (!doc.getElementById('user-drop-down') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+		},
+		banner: function(doc) {
+			return "https://www.slideshare.net/logout";
+		}
 	}
 );
