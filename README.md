@@ -36,7 +36,7 @@ $    make xpi
 
 **0.1.3** [15.05.02013]
 
-*   New sites added: slideshare.net, gamisfaction.com
+*   New sites added: slideshare.net, gamisfaction.com, bitbucket.org
 
 ## To Do ##
 *   Wrap variables and functions within a JavasScript Object. <https://developer.mozilla.org/en/XUL_School/JavaScript_Object_Management>
