@@ -164,27 +164,44 @@ FreeSignOut.sites = new Array(
 	{	// start entry for gamisfaction.com
 		id: 'gamisfaction.com',
 		check: function(url) {
-                        return url.match('gamisfaction.com/*');
-                },
-                banda: function(doc) {
-                        if (!doc.getElementById('nav-coach') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
-                        else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
-                },
-                banner: function(doc) {
-                        return "http://www.gamisfaction.com/twitter/clearsession/";
-                }
+            return url.match('gamisfaction.com/*');
+        },
+        banda: function(doc) {
+			if (!doc.getElementById('nav-coach') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+            else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+        },
+        banner: function(doc) {
+            return "http://www.gamisfaction.com/twitter/clearsession/";
+        }
     },
     {	// start entry for bitbucket.org
 		id: 'bitbucket.org',
 		check: function(url) {
-                        return url.match('bitbucket.org/*');
-                },
-                banda: function(doc) {
-                        if (!doc.getElementById('user-dropdown') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
-                        else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
-                },
-                banner: function(doc) {
-                        return "https://bitbucket.org/account/signout/";
-                }
+            return url.match('bitbucket.org/*');
+        },
+        banda: function(doc) {
+            if (!doc.getElementById('user-dropdown') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+            else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+        },
+        banner: function(doc) {
+            return "https://bitbucket.org/account/signout/";
+        }
+    },
+    {	// start entry for addons.mozilla.org 
+		id: 'addons.mozilla.org',
+		check: function(url) {
+            return url.match('addons.mozilla.org/*');
+        },
+        banda: function(doc) {
+			var myEls = doc.getElementsByClassName('nomenu logout');
+			finded=false;
+			if ( myEls.length > 0 )
+				finded=true;
+            if (!finded || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+            else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+        },
+        banner: function(doc) {
+        	return "https://addons.mozilla.org/en-US/firefox/users/logout";
+       	}
     }
 );
