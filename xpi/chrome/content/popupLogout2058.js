@@ -23,8 +23,14 @@ FreeSignOut.Logout = {
 		FreeSignOut.Logout.defaults = new Object();
 		var defaults = FreeSignOut.Logout.defaults;
 
+/***** Defaults definitions:
+
+	Images:*/
+
 		defaults.image_right = "chrome://popupLogout2058/skin/LogOut_right_green_007200.png";
 		defaults.image_left = "chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png";
+
+// banner1 is a type of presentation.
 
 		defaults.banner1 = function(doc, href, imgsrc) {
 			

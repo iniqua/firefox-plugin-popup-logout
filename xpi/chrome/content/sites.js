@@ -3,6 +3,22 @@ if ("undefined" == typeof(FreeSignOut)) {
 };
 
 FreeSignOut.sites = new Array(
+
+	/* Each entry must contain:
+
+		id: string identifier for this site.
+		check: function(url): check if a url matches this entry.
+		banda (deprecated): function(doc): return the <img> tag to be inserted in innerHTML for the <A> tag.
+		banner (deprecated): function(doc): the url to go when the banned is clicked.
+		href: function(doc): the url to go when the banner is clicked.
+		drawButton: function(doc, defaults, sitei): return the html component to be drawn. Return null if the component yet exists.
+
+		* Being:
+			- doc is the document object.
+			- defaults is an object containing default values and utility functions (see main js).
+			- sitei is the entry being run.
+*/
+
 	{	// start entry for facebook.com
 		id: "facebook.com",
 		check: function(url) {
