@@ -15,6 +15,13 @@ FreeSignOut.sites = new Array(
 		banner: function(doc) {
 			return 'javascript: document.forms["logout_form"].submit()';
 			//'<form id="logout_form" onsubmit="return window.Event && Event.__inlineSubmit && Event.__inlineSubmit(this,event)" action="/logout.php" method="post"></form>'
+		},
+		wow200: function(banner, doc, img, defaults) {
+			if (doc.getElementById('reg_form_box') || (doc.getElementById(FreeSignOut.Logout.element_id)))
+				return false;
+			img.style.top='38px';
+			img.src = defaults.image_right;
+			return true;
 		}
 	},
 	{	// start entry for twitter.com

@@ -49,6 +49,17 @@ FreeSignOut.Logout = {
 		var value = FreeSignOut.Logout.prefManager.getBoolPref(prefID);
 		return value;
 	},
+
+	customImg: function (siteid,src) {
+		var prefID = FreeSignOut.Logout.preferenceId("img."+siteid);
+		var hasUserValue = FreeSignOut.Logout.prefManager.getPrefType(prefID);
+		if (!hasUserValue) {
+			var ret = src;
+			return ret;
+		}
+		var value = FreeSignOut.Logout.prefManager.getCharPref(prefID);
+		return value;
+	},
 		
 	run: function () {
 
@@ -61,11 +72,46 @@ FreeSignOut.Logout = {
 
 		var banner = '';
 		for (var i=0;i<sites.length;i++) {
+			sitei = sites[i];
 			if (FreeSignOut.Logout.enabled(sites[i])) {
 				if (sites[i].check(doc.location.host)) {
-					banner = sites[i].banner(doc);
-					banda = sites[i].banda(doc);
+
+					if (sitei.wow200 != null) {
+
+						bodyList = doc.getElementsByTagName('body');
+						if (bodyList != null) {
+							bodyElement = bodyList[0];
+							if (bodyElement != null) {
+								bannerobj = doc.createElement('a');
+								bannerobj.id = FreeSignOut.Logout.element_id;
+								img = doc.createElement('img');
+// <img style="position: fixed; top: 38px; right: 0; border: 0;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">
+								img.style = new Object();
+								img.style.top='38px';
+								img.style.right = 0;
+								img.style.border = 0;
+								img.style.position = 'fixed';
+								img.alt = "Logout Push up";
+								if (sitei.wow200(bannerobj, doc, img, FreeSignOut.Logout)) {
+									img.src = FreeSignOut.Logout.customImg(sitei.id, img.src);
+									bannerobj.appendChild(img);
+									bannerobj.href = sitei.banner(doc);
+									bodyElement.appendChild(bannerobj);
+window.alert("wow200 compliant!");
+								}
+							}
+						}
+
+						return;
+
+					} else {
+
+						banner = sites[i].banner(doc);
+						banda = sites[i].banda(doc);
+					}
+
 					break;
+
 				}
 			}
 		}
