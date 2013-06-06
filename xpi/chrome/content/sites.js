@@ -46,7 +46,7 @@ FreeSignOut.sites = new Array(
 			return url.match('twitter.com/*');
 		},
 		banda: function(doc) {
-			if (doc.getElementById('signup-user-name') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+			if (!doc.getElementById('global-nav-home') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
 			else return '<img style="position: fixed; top: 40px; right: 0; border: 0;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
@@ -80,16 +80,18 @@ FreeSignOut.sites = new Array(
 		}
 	},
 	{	// start entry for mail.live.com
-		id: 'mail.live.com',
+		id: 'live.com',
 		check: function(url) {
-			return url.match('mail.live.com/*');
+			return url.match('live.com/*');
 		},
 		banda: function(doc) {
-			return '';
+			if (!doc.getElementById('c_me') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
 		},
 		banner: function(doc) {
-			doc.getElementById('c_signout').style.cssText = 'font-size:15px; background:darkblue;';
-			return 'null';
+			if (doc.getElementById('c_signout')!=null) {
+				return 'javascript:document.location="https://login.live.com/logout.srf";';
+			} else return '';
 		}
 	},
 	{	// start entry for linkedin.com
@@ -118,17 +120,55 @@ FreeSignOut.sites = new Array(
 			return "http://about.me/logout_handler";
 		}
 	},
-        {       // start entry for spotify.com
-                id: 'spotify.com',
-                check: function(url) {
-                        return url.match('spotify.com/*');
-                },
-                banda: function(doc) {
-                        if (!doc.getElementById('js-display-name') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
-                        else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
-                },
-                banner: function(doc) {
-                        return "https://www.spotify.com/es/logout/";
+	{	// start entry for spotify.com
+		id: 'spotify.com',
+		check: function(url) {
+			return url.match('spotify.com/*');
+		},
+		banda: function(doc) {
+			if (!doc.getElementById('js-display-name') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+		},
+		banner: function(doc) {
+			return "https://www.spotify.com/es/logout/";
+		}
+	},
+	{	// start entry for meneame.net
+		id: 'meneame.net',
+		check: function(url) {
+			return url.match('meneame.net/*');
+		},
+		banda: function(doc) {
+			var myEls = doc.getElementsByClassName('userlogin');
+			finded=false;
+			if ( myEls.length > 0 )
+				finded=true;
+			else
+				finded=false;
+			if (!finded || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+		},
+		banner: function(doc) {
+			return "http://www.meneame.net/login.php?op=logout&return=%2F";
+		}
+	},
+	{	// start entry for yahoo.com
+		id: 'yahoo.com',
+		check: function(url) {
+			return url.match('yahoo.com/*');
+		},
+		banda: function(doc) {
+			var myEls = doc.getElementsByClassName('strong y-link-1 ');
+			finded=false;
+			if ( myEls.length > 0 )
+				finded=true;
+			else
+				finded=false;
+			if (finded || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+		},
+		banner: function(doc) {
+			return "https://login.yahoo.com/config/login?.src=fpctx&logout=1&.direct=1&.done=http://yahoo.com/";
 		}
 	}
 );
