@@ -1,1 +1,2 @@
 pref("extensions.popupLogout2058.autorun", true);
+//pref("extensions.popupLogout2058.img.facebook.com", 'http://1.bp.blogspot.com/_CaRV_W-idYQ/TIkNmoxblmI/AAAAAAAAAXw/rCsx7KNvdP4/s1600/phineas-y-ferb-795440.jpeg');
