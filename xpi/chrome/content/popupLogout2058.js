@@ -8,10 +8,6 @@ FreeSignOut.Logout = {
 
 	element_id: "popup_logout_element",
 
-	image_right: "chrome://popupLogout2058/skin/LogOut_right_green_007200.png",
-
-	image_left:  "chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png",
-
 	preferencesRoot: "extensions.popupLogout2058.",
 
 	prefManager: "",
@@ -20,7 +16,32 @@ FreeSignOut.Logout = {
 
 	init: function () {
 
+		var logout = FreeSignOut.Logout;
+
 		FreeSignOut.Logout.prefManager = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+
+		FreeSignOut.Logout.defaults = new Object();
+		var defaults = FreeSignOut.Logout.defaults;
+
+		defaults.image_right = "chrome://popupLogout2058/skin/LogOut_right_green_007200.png";
+		defaults.image_left = "chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png";
+
+		defaults.banner1 = function(doc, href, imgsrc) {
+			
+			var bannerobj = doc.createElement('a');
+			bannerobj.id = FreeSignOut.Logout.element_id;
+			bannerobj.href = href;
+			bannerobj.style = new Object();
+			bannerobj.style.top = '38px';
+			bannerobj.style.right = 0;
+			bannerobj.style.border = 0;
+			bannerobj.style.position = 'fixed';
+			var img = doc.createElement('img');
+			img.alt = "Logout Push up";
+			img.src = imgsrc;
+			bannerobj.appendChild(img);
+			return bannerobj;
+		};
 
 		window.addEventListener("load", FreeSignOut.Logout.onBrowserLoad, false);
 	},
@@ -50,17 +71,6 @@ FreeSignOut.Logout = {
 		return value;
 	},
 
-	customImg: function (siteid,src) {
-		var prefID = FreeSignOut.Logout.preferenceId("img."+siteid);
-		var hasUserValue = FreeSignOut.Logout.prefManager.getPrefType(prefID);
-		if (!hasUserValue) {
-			var ret = src;
-			return ret;
-		}
-		var value = FreeSignOut.Logout.prefManager.getCharPref(prefID);
-		return value;
-	},
-		
 	run: function () {
 
 		doc = content.document;
@@ -76,29 +86,15 @@ FreeSignOut.Logout = {
 			if (FreeSignOut.Logout.enabled(sites[i])) {
 				if (sites[i].check(doc.location.host)) {
 
-					if (sitei.wow200 != null) {
+					if (sitei.drawButton != null) {
 
 						bodyList = doc.getElementsByTagName('body');
 						if (bodyList != null) {
 							bodyElement = bodyList[0];
 							if (bodyElement != null) {
-								bannerobj = doc.createElement('a');
-								bannerobj.id = FreeSignOut.Logout.element_id;
-								img = doc.createElement('img');
-// <img style="position: fixed; top: 38px; right: 0; border: 0;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">
-								img.style = new Object();
-								img.style.top='38px';
-								img.style.right = 0;
-								img.style.border = 0;
-								img.style.position = 'fixed';
-								img.alt = "Logout Push up";
-								if (sitei.wow200(bannerobj, doc, img, FreeSignOut.Logout)) {
-									img.src = FreeSignOut.Logout.customImg(sitei.id, img.src);
-									bannerobj.appendChild(img);
-									bannerobj.href = sitei.banner(doc);
+								var bannerobj = sitei.drawButton(doc, FreeSignOut.Logout.defaults, sitei);
+								if (bannerobj != null)
 									bodyElement.appendChild(bannerobj);
-window.alert("wow200 compliant!");
-								}
 							}
 						}
 

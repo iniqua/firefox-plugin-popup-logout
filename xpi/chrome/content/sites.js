@@ -12,16 +12,16 @@ FreeSignOut.sites = new Array(
 			if (doc.getElementById('reg_form_box') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
 			else return '<img style="position: fixed; top: 38px; right: 0; border: 0;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">';
 		},
-		banner: function(doc) {
+		href: function(doc) {
 			return 'javascript: document.forms["logout_form"].submit()';
 			//'<form id="logout_form" onsubmit="return window.Event && Event.__inlineSubmit && Event.__inlineSubmit(this,event)" action="/logout.php" method="post"></form>'
 		},
-		wow200: function(banner, doc, img, defaults) {
+		drawButton: function(doc, defaults, sitei) {
 			if (doc.getElementById('reg_form_box') || (doc.getElementById(FreeSignOut.Logout.element_id)))
-				return false;
-			img.style.top='38px';
-			img.src = defaults.image_right;
-			return true;
+				return null;
+			var button = defaults.banner1(doc, sitei.href(doc), defaults.image_right);
+			button.style.top = '38px';
+			return button;
 		}
 	},
 	{	// start entry for twitter.com
