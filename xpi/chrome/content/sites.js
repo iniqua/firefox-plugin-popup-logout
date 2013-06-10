@@ -170,5 +170,91 @@ FreeSignOut.sites = new Array(
 		banner: function(doc) {
 			return "https://login.yahoo.com/config/login?.src=fpctx&logout=1&.direct=1&.done=http://yahoo.com/";
 		}
-	}
+	},
+	{	// start entry for slideshare.net
+		id: 'slideshare.net',
+		check: function(url) {
+			return url.match('slideshare.net/*');
+		},
+		banda: function(doc) {
+			if (!doc.getElementById('user-drop-down') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+			else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+		},
+		banner: function(doc) {
+			return "https://www.slideshare.net/logout";
+		}
+	},
+	{	// start entry for gamisfaction.com
+		id: 'gamisfaction.com',
+		check: function(url) {
+            return url.match('gamisfaction.com/*');
+        },
+        banda: function(doc) {
+			if (!doc.getElementById('nav-coach') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+            else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+        },
+        banner: function(doc) {
+            return "http://www.gamisfaction.com/twitter/clearsession/";
+        }
+    },
+    {	// start entry for bitbucket.org
+		id: 'bitbucket.org',
+		check: function(url) {
+            return url.match('bitbucket.org/*');
+        },
+        banda: function(doc) {
+            if (!doc.getElementById('user-dropdown') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+            else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+        },
+        banner: function(doc) {
+            return "https://bitbucket.org/account/signout/";
+        }
+    },
+    {	// start entry for addons.mozilla.org 
+		id: 'addons.mozilla.org',
+		check: function(url) {
+            return url.match('addons.mozilla.org/*');
+        },
+        banda: function(doc) {
+			var myEls = doc.getElementsByClassName('nomenu logout');
+			finded=false;
+			if ( myEls.length > 0 )
+				finded=true;
+            if (!finded || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+            else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+        },
+        banner: function(doc) {
+        	return "https://addons.mozilla.org/en-US/firefox/users/logout";
+       	} // https://soundcloud.com/logout
+    },
+    {	// start entry for soundcloud.com
+		id: 'soundcloud.com',
+		check: function(url) {
+            return url.match('soundcloud.com/*');
+        },
+        banda: function(doc) {
+			var myEls = doc.getElementsByClassName('header__profileButton sc-pointer');
+			finded=false;
+			if ( myEls.length > 0 )
+				finded=true;
+            if (!finded || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+            else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+        },
+        banner: function(doc) {
+        	return "https://soundcloud.com/logout";
+       	} 
+    }, 
+    {	// start entry for digg.com
+		id: 'digg.com',
+		check: function(url) {
+            return url.match('digg.com/*');
+        },
+        banda: function(doc) {
+            if (!doc.getElementById('logout-link-nav') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
+            else return '<img style="position: fixed; bottom: 0px; right: 0; border: 0; z-index: 999999;" src="chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png" alt="Logout Push up">';
+        },
+        banner: function(doc) {
+            return "http://digg.com/logout";
+        }
+    }
 );
