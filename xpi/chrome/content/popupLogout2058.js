@@ -8,10 +8,6 @@ FreeSignOut.Logout = {
 
 	element_id: "popup_logout_element",
 
-	image_right: "chrome://popupLogout2058/skin/LogOut_right_green_007200.png",
-
-	image_left:  "chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png",
-
 	preferencesRoot: "extensions.popupLogout2058.",
 
 	prefManager: "",
@@ -20,7 +16,38 @@ FreeSignOut.Logout = {
 
 	init: function () {
 
+		var logout = FreeSignOut.Logout;
+
 		FreeSignOut.Logout.prefManager = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+
+		FreeSignOut.Logout.defaults = new Object();
+		var defaults = FreeSignOut.Logout.defaults;
+
+/***** Defaults definitions:
+
+	Images:*/
+
+		defaults.image_right = "chrome://popupLogout2058/skin/LogOut_right_green_007200.png";
+		defaults.image_left = "chrome://popupLogout2058/skin/LogOut_right_bottom_green_007200.png";
+
+// banner1 is a type of presentation.
+
+		defaults.banner1 = function(doc, href, imgsrc) {
+			
+			var bannerobj = doc.createElement('a');
+			bannerobj.id = FreeSignOut.Logout.element_id;
+			bannerobj.href = href;
+			bannerobj.style = new Object();
+			bannerobj.style.top = '38px';
+			bannerobj.style.right = 0;
+			bannerobj.style.border = 0;
+			bannerobj.style.position = 'fixed';
+			var img = doc.createElement('img');
+			img.alt = "Logout Push up";
+			img.src = imgsrc;
+			bannerobj.appendChild(img);
+			return bannerobj;
+		};
 
 		window.addEventListener("load", FreeSignOut.Logout.onBrowserLoad, false);
 	},
@@ -49,7 +76,7 @@ FreeSignOut.Logout = {
 		var value = FreeSignOut.Logout.prefManager.getBoolPref(prefID);
 		return value;
 	},
-		
+
 	run: function () {
 
 		doc = content.document;
@@ -61,11 +88,32 @@ FreeSignOut.Logout = {
 
 		var banner = '';
 		for (var i=0;i<sites.length;i++) {
+			sitei = sites[i];
 			if (FreeSignOut.Logout.enabled(sites[i])) {
 				if (sites[i].check(doc.location.host)) {
-					banner = sites[i].banner(doc);
-					banda = sites[i].banda(doc);
+
+					if (sitei.drawButton != null) {
+
+						bodyList = doc.getElementsByTagName('body');
+						if (bodyList != null) {
+							bodyElement = bodyList[0];
+							if (bodyElement != null) {
+								var bannerobj = sitei.drawButton(doc, FreeSignOut.Logout.defaults, sitei);
+								if (bannerobj != null)
+									bodyElement.appendChild(bannerobj);
+							}
+						}
+
+						return;
+
+					} else {
+
+						banner = sites[i].banner(doc);
+						banda = sites[i].banda(doc);
+					}
+
 					break;
+
 				}
 			}
 		}

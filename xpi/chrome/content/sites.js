@@ -3,6 +3,22 @@ if ("undefined" == typeof(FreeSignOut)) {
 };
 
 FreeSignOut.sites = new Array(
+
+	/* Each entry must contain:
+
+		id: string identifier for this site.
+		check: function(url): check if a url matches this entry.
+		banda (deprecated): function(doc): return the <img> tag to be inserted in innerHTML for the <A> tag.
+		banner (deprecated): function(doc): the url to go when the banned is clicked.
+		href: function(doc): the url to go when the banner is clicked.
+		drawButton: function(doc, defaults, sitei): return the html component to be drawn. Return null if the component yet exists.
+
+		* Being:
+			- doc is the document object.
+			- defaults is an object containing default values and utility functions (see main js).
+			- sitei is the entry being run.
+*/
+
 	{	// start entry for facebook.com
 		id: "facebook.com",
 		check: function(url) {
@@ -12,9 +28,16 @@ FreeSignOut.sites = new Array(
 			if (doc.getElementById('reg_form_box') || (doc.getElementById(FreeSignOut.Logout.element_id))) return '';
 			else return '<img style="position: fixed; top: 38px; right: 0; border: 0;" src="chrome://popupLogout2058/skin/LogOut_right_green_007200.png" alt="Logout Push up">';
 		},
-		banner: function(doc) {
+		href: function(doc) {
 			return 'javascript: document.forms["logout_form"].submit()';
 			//'<form id="logout_form" onsubmit="return window.Event && Event.__inlineSubmit && Event.__inlineSubmit(this,event)" action="/logout.php" method="post"></form>'
+		},
+		drawButton: function(doc, defaults, sitei) {
+			if (doc.getElementById('reg_form_box') || (doc.getElementById(FreeSignOut.Logout.element_id)))
+				return null;
+			var button = defaults.banner1(doc, sitei.href(doc), defaults.image_right);
+			button.style.top = '38px';
+			return button;
 		}
 	},
 	{	// start entry for twitter.com
