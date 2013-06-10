@@ -34,6 +34,10 @@ $    make xpi
 
 *   New sites added: meneame.net, yahoo.com
 
+**0.1.3** [15.05.02013]
+
+*   New sites added: slideshare.net, gamisfaction.com, bitbucket.org, addons.mozilla.org
+
 ## To Do ##
 *   Wrap variables and functions within a JavasScript Object. <https://developer.mozilla.org/en/XUL_School/JavaScript_Object_Management>
 *   Manage DOM nodes creates dinamically <https://developer.mozilla.org/en/XUL_School/DOM_Building_and_HTML_Insertion>
